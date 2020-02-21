@@ -55,6 +55,14 @@ public class ArticelController {
 
     }
 
+// /article/{articleId}  修改文章
+    @RequestMapping(value = "{articleId}",method = RequestMethod.PUT)
+    public Result function4(@PathVariable("articleId") String articleId,@RequestBody Article article){
+                article.setId(articleId);
+                articleService.updateOneById(article);
+                return new Result(true,StatusCode.OK,"修改成功");
+    }
+
 
 
 
