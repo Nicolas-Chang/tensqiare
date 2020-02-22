@@ -2,6 +2,7 @@ package com.tensquare.article.Controller;
 
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.tensquare.article.config.ControllerMonitor;
 import com.tensquare.article.pojo.Article;
 import com.tensquare.article.service.ArticleService;
 import com.tensquare.entity.PageResult;
@@ -23,12 +24,14 @@ public class ArticelController {
     private ArticleService articleService;
 
 //    GET/article 文章全部列表
+    @ControllerMonitor
     @RequestMapping(method = RequestMethod.GET)
     public Result function1(){
         List<Article> all = articleService.findAll();
         return new Result(true, StatusCode.OK,"查询全部成功",all);
     }
     ///article/{articleId}根据ID查询文章
+    @ControllerMonitor
     @RequestMapping(value = "{articleId}",method = RequestMethod.GET)
     public Result function2(@PathVariable("articleId") String articleId ){
         Article article = articleService.findById(articleId);

@@ -8,6 +8,13 @@ spring:
     url: jdbc:mysql://192.168.200.128:3306/tensquare_article?characterEncoding=utf-8
     username: root
     password: root
+  data:
+    mongodb:
+      host: 192.168.200.128
+      database: commentdb
+  redis:
+    host: 192.168.200.128
+    port: 6379
 # Mybatis-Plus 配置
 mybatis-plus:
   #  mapper-locations: classpath:/mapper/*Mapper.xml
