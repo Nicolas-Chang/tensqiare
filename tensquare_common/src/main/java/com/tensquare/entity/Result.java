@@ -1,6 +1,6 @@
 package com.tensquare.entity;
 
-public class Result {
+public class Result<T> {
 
     private boolean flag;//是否成功
     private Integer code;// 返回码

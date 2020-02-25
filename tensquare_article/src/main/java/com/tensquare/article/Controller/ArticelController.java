@@ -33,7 +33,7 @@ public class ArticelController {
     ///article/{articleId}根据ID查询文章
     @ControllerMonitor
     @RequestMapping(value = "{articleId}",method = RequestMethod.GET)
-    public Result function2(@PathVariable("articleId") String articleId ){
+    public Result<Article> function2(@PathVariable("articleId") String articleId ){
         Article article = articleService.findById(articleId);
         return new Result(true,StatusCode.OK,"查询成功",article);
     }
